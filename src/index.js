@@ -10,7 +10,8 @@ mongoose.connect(
   },
 );
 
-app.get('/', (req, res) => res.send('hello world'));
+app.use(express.json());
+app.use(require('./routes'));
 
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
