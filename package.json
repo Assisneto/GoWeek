@@ -5,6 +5,7 @@
   "author": "Assisneto",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "eslint": "^5.8.0",
     "express": "^4.16.4",
     "husky": "1.1.2",

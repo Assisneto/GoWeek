@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 
-const server = require('http').server(app);
+const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 
@@ -21,10 +22,11 @@ app.use((req, _res, next) => {
   return next();
 });
 
+app.use(cors());
 app.use(express.json());
 app.use(require('./routes'));
 
-app.listen(3000, () => {
+server.listen(3000, () => {
   // eslint-disable-next-line no-console
   console.log('serve on');
 });
