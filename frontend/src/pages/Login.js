@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import './Login.css';
 import twitterLogo from "../twitter.svg";
 
+
 export default class Login extends Component {
   
   state = {
-    username : '',
+    username: '',
   };
 
+  
   handleSubmit = event =>{
     event.preventDefault();
     const {username} = this.state;
@@ -18,7 +20,7 @@ export default class Login extends Component {
     localStorage.setItem('@GoTwitter:username',username);
 
     this.props.history.push('/timeline');
-  }
+  };
 
   handleInputChange = event =>{
     this.setState({username: event.target.value});
@@ -38,6 +40,7 @@ export default class Login extends Component {
            />
           <button type ="submit">Entrar</button>
         </form>
+
       </div>
 
     );
